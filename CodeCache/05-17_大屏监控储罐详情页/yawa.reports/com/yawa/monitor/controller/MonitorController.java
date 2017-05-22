@@ -113,13 +113,11 @@ public class MonitorController extends Controller {
 					disRate = a.intValue() + "%";
 				}
 			} catch (Exception e) {}
-			
 			hm.put("disRate", disRate);
 			hm.put("dnmc", tv);
-			hm.put("llj", Db.findFirst("select * from data_lljs where find_in_set(?, tank_ids)", tankid));
 			hm.put("sattrs", Tank.me.getNewSwitchs(tankid));
-			List<TankAttr> attrs = TankAttr.me.getNewValAttrs(tankid);
-			hm.put("vattrs", attrs);
+			hm.put("vattrs", TankAttr.me.getNewValAttrs(tankid));
+			hm.put("llj", Db.findFirst("select * from data_lljs where find_in_set(?, tank_ids)", tankid));
 			hm.put("ckb", Db.findFirst("select * from data_cards where find_in_set(?, tank_ids)", tankid));
 		} catch (Exception e) {
 			System.out.println(e.getMessage());

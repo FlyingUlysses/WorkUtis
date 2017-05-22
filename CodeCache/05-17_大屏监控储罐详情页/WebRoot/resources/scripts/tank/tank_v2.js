@@ -24,11 +24,12 @@ function reload(){
 	$.get(url, { id: _tank }, function(data, status) {
 		
 		//添加状态灯
-		if(data.sattrs != null){
+		if(data.sattrs != null ){
 			$("#actBoard").empty();
 			var tempStr = "";
 			var strs ="";
 				$.each(data.sattrs.light,function(i,item){
+					$("#actBoard").show();
 					if (item.light=="lu.gif") {
 						tempStr	+="<li class='green'><span></span><p>"+item.app_name+"</p></li>"
 					}else if (item.light=="red.gif") {
@@ -39,7 +40,7 @@ function reload(){
 				});
 				strs += "<dd><ul>" + tempStr + "</ul></dd>";
 				$("#actBoard").append(strs);
-			}
+		}
 		
 		//添加右边数据栏
 			$("#monitorata").empty();
@@ -70,16 +71,21 @@ function reload(){
 				$("#ext_temp").html("<strong>"+formatNull(data.dnmc.ext_temp)+"<strong>");
 				$("#ext_press_1").html("<strong>"+formatNull(data.dnmc.ext_press_1)+"<strong>");
 				$("#ext_press_2").html("<strong>"+formatNull(data.dnmc.ext_press_2)+"<strong>");
+				$("#disRate").html("<i style='height: "+formatNull(data.disRate)+";'></i>");
+				$("#detect_tyq").html("<strong>"+formatNull(data.dnmc.detect_tyq)+"<strong>");
+				$("#detect_tank").html("<strong>"+formatNull(data.dnmc.detect_tank)+"<strong>");
+				
+			}
+			if (data.llj != null) {
 				$("#ext_flow").html("<strong>"+formatNull(data.llj.ext_flow)+"<strong>");
 				$("#flow_bk").html("<strong>"+formatNull(data.llj.flow_bk)+"<strong>");
 				$("#flow_gk").html("<strong>"+formatNull(data.llj.flow_gk)+"<strong>");
 				$("#flow_temp").html("<strong>"+formatNull(data.llj.flow_temp)+"<strong>");
 				$("#flow_press").html("<strong>"+formatNull(data.llj.flow_press)+"<strong>");
-				$("#disRate").html("<i style='height: "+formatNull(data.disRate)+";'></i>");
-				$("#detect_tyq").html("<strong>"+formatNull(data.dnmc.detect_tyq)+"<strong>");
-				$("#detect_tank").html("<strong>"+formatNull(data.dnmc.detect_tank)+"<strong>");
+			}
+			if (data.ckb != null) {
 				$("#card_yqzl").html("<strong>"+formatNull(data.ckb.card_yqzl)+"<strong>");
-		}
+			}
 			
 			if(data.alert.sound > 0) playAlarm();
 			else stopAlarm();

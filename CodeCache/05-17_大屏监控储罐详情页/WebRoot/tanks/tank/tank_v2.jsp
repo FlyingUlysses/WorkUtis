@@ -32,7 +32,7 @@
                              </c:forEach>
 						</select>
 					</dt>
-					<div id="actBoard" >
+					<div id="actBoard" hidden>
 					</div>
 				</dl>
 				<div id="monitorata">
