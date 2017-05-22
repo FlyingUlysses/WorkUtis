@@ -13,16 +13,20 @@ h6,
 dl,
 dt,
 dd,
-div {
+div,
+select,
+option {
   margin: 0;
   padding: 0;
   font-size: 14px;
-  font-family: "arial, helvetica, sans-serif";
+  font-family: "Microsoft Yahei", "Hiragino Sans GB", "Helvetica Neue", Helvetica, tahoma, arial, "WenQuanYi Micro Hei", Verdana, sans-serif, "\5B8B\4F53";
   box-sizing: border-box;
 }
 html,
 body {
   height: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
   background-color: white!important;
 }
 span {
@@ -31,6 +35,14 @@ span {
 ul,
 li {
   list-style: none;
+}
+input,
+select {
+  font-family: sans-serif;
+  margin: 0;
+  vertical-align: middle;
+  text-transform: none;
+  outline: none;
 }
 .clearfix:after {
   content: " ";
@@ -58,22 +70,25 @@ li {
   margin-left: 30px;
   overflow-x: hidden;
   overflow-y: auto;
-  width: 350px;
+  width: 330px;
   background-color: #ececec;
 }
 .aside dl {
-  padding: 25px 20px 10px 20px;
+  padding: 10px 20px 10px 20px;
 }
 .aside dl dt {
   width: 100%;
 }
 .aside dl dt select {
   width: 100%;
-  height: 30px;
+  height: 34px;
+  line-height: 30px;
   text-indent: 10px;
+  font-size: 16px;
 }
 .aside dl dt select option {
-  height: 30px;
+  height: 34px;
+  text-indent: 10px;
   line-height: 30px;
 }
 .aside dl dd {
@@ -151,18 +166,17 @@ li {
 }
 .main {
   height: 100%;
-  margin-left: 380px;
-  padding-top: 25px;
+  margin-left: 360px;
   background-color: #f9f9f9;
   position: relative;
 }
 .main .title {
   background-color: #e8e8e8;
-  margin-right: 30px;
+  margin-right: 35px;
 }
 .main .title span {
-  height: 30px;
-  line-height: 30px;
+  height: 35px;
+  line-height: 35px;
   background-color: #579ddb;
   color: white;
   padding: 0 20px;
@@ -281,7 +295,7 @@ li {
   display: inline-block;
   width: 100%;
   left: 2.8%;
-  background-color: #77c922;
+  background-color: #579ddb;
   position: absolute;
   bottom: 0px;
 }
