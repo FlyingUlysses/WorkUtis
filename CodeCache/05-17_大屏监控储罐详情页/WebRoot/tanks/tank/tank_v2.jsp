@@ -72,25 +72,15 @@
 	function loadDate(){
 		window.location.href = _basePath + "/monitor/tankV2?id=" + ${tankid};
 	}
-$(function() {
-	if ($("body").height() <= $(".main >img").height() + 55) {
-		$(".main >img").css("height",$("body").height()- 55 +'px');
-	}
-	var imgW = $(".main >img").width();
-    var imgH = $(".main >img").height();
-   $("#box").css({
-	  "width":imgW,
-	  "height":imgH
-   });
-   	var f =false;
-   
-   setInterval(function() {
-   		if (f) {
-   			$(".alarm").hide();
-   		}else{
-   			$(".alarm").show();
-   		}
-   		f= !f;
-   },300);
-});
+	$(function() {
+		if ($("body").height() <= $(".main >img").height() + 55) {
+			$(".main >img").css("height",$("body").height()- 55 +'px');
+		}
+		var imgW = $(".main >img").width();
+	    var imgH = $(".main >img").height();
+	   $("#box").css({
+		  "width":imgW,
+		  "height":imgH
+	   });
+	});
 </script>

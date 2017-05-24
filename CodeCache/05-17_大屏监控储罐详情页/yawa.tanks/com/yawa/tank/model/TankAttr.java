@@ -74,7 +74,7 @@ public class TankAttr extends Model<TankAttr> {
 	 */
 	public List<TankAttr> getNewValAttrs(Integer id) {
 		String sql = "SELECT DISTINCT a.device_id,d.classify,(SELECT dd.name FROM dict dd WHERE dd.`GROUP_CODE`='DEVICE.CLASSIFY' AND dd.`CODE`=d.classify ) classifyname, a.attr_id, c.name attr_name, a.value fval,c.unit unit, "
-					+" (CASE WHEN b.online = 1 AND a.alert IS NOT NULL THEN '#de577b' END) color, " 
+					+" (CASE WHEN b.online = 1 and a.alert is not null THEN 'orange' END) color, " 
 					+" (CASE WHEN b.online = 0 THEN 'off' END) clazz " 
 					+" FROM tank_attrs a, site_device b, site_device_attr c,devices d "
 					+" WHERE a.device_id = b.id AND b.id = c.deviceId AND a.attr_id = c.attr_id "

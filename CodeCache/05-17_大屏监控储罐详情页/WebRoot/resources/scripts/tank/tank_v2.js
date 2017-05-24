@@ -49,13 +49,29 @@ function reload(){
 						$.each(data.vattrs,function(i,item){
 							if (i==0) {
 								str+="<div class='card clearfix'><div class='title'>"+item.classifyname+"</div><div class='txt'>";
-								str+="<p><i>"+item.attr_name+"</i><span><strong>"+item.fval+"</strong><i>"+item.unit+"</i></span></p>";
+								str+="<p><i>"+item.attr_name+"</i>";
+								//判断是否在线在线添加颜色标识
+								if (item.color!=null) {
+									str+="<span class = '"+item.color+"'><strong>"+item.fval+"</strong><i>"+item.unit+"</i></span></p>";
+								}else{
+									str+="<span><strong>"+item.fval+"</strong><i>"+item.unit+"</i></span></p>";
+								}
 							}else if (data.vattrs[i].classify != data.vattrs[i-1].classify) {
 								str+="</div></div>";
 								str+="<div class='card clearfix'><div class='title'>"+item.classifyname+"</div><div class='txt'>";
-								str+="<p><i>"+item.attr_name+"</i><span><strong>"+item.fval+"</strong><i>"+item.unit+"</i></span></p>";
+								str+="<p><i>"+item.attr_name+"</i>";
+								if (item.color!=null) {
+									str+="<span class = '"+item.color+"'><strong>"+item.fval+"</strong><i>"+item.unit+"</i></span></p>";
+								}else{
+									str+="<span><strong>"+item.fval+"</strong><i>"+item.unit+"</i></span></p>";
+								}
 							}else if (data.vattrs[i].classify == data.vattrs[i-1].classify) {
-								str+="<p><i>"+item.attr_name+"</i><span><strong>"+item.fval+"</strong><i>"+item.unit+"</i></span></p>";
+								str+="<p><i>"+item.attr_name+"</i>";
+								if (item.color!=null) {
+									str+="<span class = '"+item.color+"'><strong>"+item.fval+"</strong><i>"+item.unit+"</i></span></p>";
+								}else{
+									str+="<span><strong>"+item.fval+"</strong><i>"+item.unit+"</i></span></p>";
+								}
 							}
 							if (i==(data.vattrs.length-1)) {
 								str+="</div></div>";
@@ -87,10 +103,11 @@ function reload(){
 				$("#card_yqzl").html("<strong>"+formatNull(data.ckb.card_yqzl)+"<strong>");
 			}
 			
-			if(data.alert.sound > 0) playAlarm();
-			else stopAlarm();
-			if(data.alert.cnt > 0)
-			$("#alarm").show();
+		alert(data.alert.cnt);
+		if(data.alert.sound > 0) playAlarm();
+		else stopAlarm();
+		if(data.alert.cnt > 0)
+				OpenAlarm();
 			
 	});
 }
@@ -117,5 +134,19 @@ function formatNull(str, rep, format) {
 	}
 	return str + format;
 }
+
+
+function OpenAlarm(){
+		var f =false;
+		setInterval(function() {
+				if (f) {
+					$("#alarm").hide();
+				}else{
+					$("#alarm").show();
+				}
+				f= !f;
+		},300);
+}
+
 
 
