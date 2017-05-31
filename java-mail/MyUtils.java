@@ -29,19 +29,26 @@ public class MyUtils {
 			email.addTo("to@qq.com");
 			email.setHostName(ConstantItems.EMAIL_HOST);
 			email.setAuthentication("from@163.com",
-					"fromPWD");
+					"pwd");
 			email.setSSLOnConnect(true);
 			email.setFrom("from@163.com", "desc");
-			email.setSubject("title");
+			email.setSubject("测试一下");
 			email.setCharset("UTF-8");
-			email.setMsg("content");
+			email.setMsg("简单测试一下");
 			
-	        EmailAttachment attachment = new EmailAttachment();   
-	        attachment.setPath("D:/test.txt");    
-	        attachment.setDisposition(EmailAttachment.ATTACHMENT);    
+	        EmailAttachment attachment = new EmailAttachment();
+	        attachment.setPath("D:/test.txt"); 
+	        attachment.setDescription(EmailAttachment.ATTACHMENT);
 	        attachment.setDescription("测试");
 	        attachment.setName(MimeUtility.encodeText("测试.txt")); 
 	        email.attach(attachment);
+	        
+	        EmailAttachment att = new EmailAttachment();
+	        att.setPath("D:/test2.txt"); 
+	        att.setDescription(EmailAttachment.ATTACHMENT);
+	        att.setDescription("测试2");
+	        att.setName(MimeUtility.encodeText("测试2.txt")); 
+	        email.attach(att);	         
 	        
 			email.send();
 		} catch (Exception e) {
@@ -52,8 +59,8 @@ public class MyUtils {
 	public static void sendNativeEmail(){
 	        try {  
 	  
-	            String smtpFromMail = "wangyongtest123@163.com";  
-	            String pwd = "wy940707"; 
+	            String smtpFromMail = "from@163.com";  
+	            String pwd = "PWD"; 
 	            int port = 25; 
 	            String host = "smtp.163.com";   
 	  
@@ -67,7 +74,7 @@ public class MyUtils {
 	            try {  
 	                message.setFrom(new InternetAddress(smtpFromMail, "邮件测试"));  
 	                message.addRecipient(Message.RecipientType.TO,  
-	                        new InternetAddress("2522737133@qq.com"));  
+	                        new InternetAddress("to@qq.com"));  
 	                message.setSubject("哈哈");  
 	                message.addHeader("charset", "UTF-8");  
 	                  

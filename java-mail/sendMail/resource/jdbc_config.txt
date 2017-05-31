@@ -1,5 +1,0 @@
-jdbcUrl  = jdbc:mysql://192.168.3.120:3306/ngms?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true
-meterUrl = jdbc:mysql://192.168.3.120:3306/meters?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true
-user = yawa
-password = Yawa1234
-devMode = true
