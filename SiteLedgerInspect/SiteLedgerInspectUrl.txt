@@ -1,0 +1,27 @@
+//首页信息
+http://192.168.3.11:8080/hgms/app/actProcess?appData={"appKey":"getPageLedgerInsp","token":"c9c683a2d8b24e23a879e029c1737234","deviceId":"94D6A8C4-7226-4CFF-BBA4-65DEEE2F7592","inParam":{"state":2}}
+
+
+//获取站点
+http://192.168.3.11:8080/hgms/app/actProcess?appData={"appKey":"getLedgerSites","token":"c9c683a2d8b24e23a879e029c1737234","deviceId":"94D6A8C4-7226-4CFF-BBA4-65DEEE2F7592","inParam":{"lon":116.3424590000 ,"lat":40.0497810000}}
+
+
+//获取巡检台账列表
+http://192.168.3.11:8080/hgms/app/actProcess?appData={"appKey":"getSiteLedgers","token":"c9c683a2d8b24e23a879e029c1737234","deviceId":"94D6A8C4-7226-4CFF-BBA4-65DEEE2F7592","inParam":{"site":{"location":"39.729175,116.421248","address":"北京市大兴区资源路","name":"资源","site_id":2}}}
+
+http://192.168.3.11:8080/hgms/app/actProcess?appData={"appKey":"getSiteLedgers","token":"c9c683a2d8b24e23a879e029c1737234","deviceId":"94D6A8C4-7226-4CFF-BBA4-65DEEE2F7592","inParam":{"inspectId":12}}}
+
+
+//附属设备
+http://192.168.3.11:8080/hgms/app/actProcess?appData={"appKey":"getLedgerAttached","token":"c9c683a2d8b24e23a879e029c1737234","deviceId":"94D6A8C4-7226-4CFF-BBA4-65DEEE2F7592","inParam":{"itemId":38}}}
+
+//获取设备规范
+http://192.168.3.11:8080/hgms/app/actProcess?appData={"appKey":"getLedgerStandard","token":"c9c683a2d8b24e23a879e029c1737234","deviceId":"94D6A8C4-7226-4CFF-BBA4-65DEEE2F7592","inParam":{"itemId":38}}}
+
+
+//保存巡检记录
+http://192.168.3.11:8080/hgms/app/actProcess?appData={"appKey":"saveLedgerInspctItems","token":"c9c683a2d8b24e23a879e029c1737234","deviceId":"94D6A8C4-7226-4CFF-BBA4-65DEEE2F7592","inParam":{"subItems":[{"id":39,"locale":"测试一下","state":2,"data":"测试一下","remarks":"测试一下","ledger_id":7}],"item":{"id":38,"locale":"测试一下","state":2,"data":"测试一下","remarks":"测试一下","ledger_id":8}}}}
+
+
+//保存巡检结果
+http://192.168.3.11:8080/hgms/app/actProcess?appData={"appKey":"saveLedgerInsp","token":"c9c683a2d8b24e23a879e029c1737234","deviceId":"94D6A8C4-7226-4CFF-BBA4-65DEEE2F7592","inParam":{"itemList":[{"id":1,"state":1,"name":"LNG罐2",},{"id":2,"state":0,"name":"储罐2","state_name":"异常"},{"id":35,"state":2,"name":"杜瓦瓶2","image":null,},{"id":36,"state":2,"name":"杜瓦瓶3",},{"id":37,"state":2,"name":"杜瓦瓶4",},{"id":38,"state":1,"name":"LNG罐2",},{"id":40,"state":2,"name":"储罐2",},{"id":41,"state":2,"name":"LNG罐3",},{"id":42,"state":2,"name":"LNG罐4",},{"id":43,"state":2,"name":"储罐1",},{"id":44,"state":2,"name":"储罐1",},{"id":45,"state":2,"name":"储罐3",},{"id":47,"state":2,"name":"大小罐",}],"inspect":{"id":12,"address":"北京市大兴区资源路","location":"39.729175,116.421248","site_id":2}}}}
