@@ -5,7 +5,6 @@ import com.jfinal.core.Controller;
 import com.jfinal.plugin.activerecord.Db;
 import com.yawa.core.model.Dict;
 import com.yawa.core.model.User;
-import com.yawa.meter.model.Person;
 import com.yawa.tank.model.LogRecharge;
 import com.yawa.util.SecurityContextUtil;
 import com.yawa.util.model.ResponseData;
@@ -48,7 +47,7 @@ public class CardChargeController extends Controller {
     public void cardChargePay() {
         setAttr("gas_count", getPara("gas_count"));
         User user = SecurityContextUtil.getLoginUser(getRequest());
-        setAttr("person", LogRecharge.me.getReCardPay(getParaToInt("site_id"),user.getInt("conpamy"),getPara("name")));
+        setAttr("person", LogRecharge.me.getReCardPay(getParaToInt("site_id"),user.getInt("conpamy"),getPara("name"),getPara("cardNum")));
         setAttr("rechargetype", Dict.me.getGroupItems("RECHARGE.TYPE"));
         render("cardCharge_pay.jsp");
     }

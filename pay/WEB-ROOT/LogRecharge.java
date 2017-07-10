@@ -24,7 +24,17 @@ import com.yawa.util.model.Page;
 @SuppressWarnings("serial")
 public class LogRecharge extends Model<LogRecharge> {
     public final static LogRecharge me = new LogRecharge();
-    
+  
+    /**
+     * 查询客户信息列表
+     * @param name
+     * @param siteId
+     * @param company
+     * @param page
+     * @param limit
+     * @return
+     * @Description:
+     */
     public Page<Record> getPages(String name, Integer siteId, Integer company,
         Integer page, Integer limit) {
         String filter ="";
@@ -45,7 +55,15 @@ public class LogRecharge extends Model<LogRecharge> {
 
 
 
-
+    /**
+     * 获取查询条件
+     * @param name
+     * @param siteId
+     * @param company
+     * @param filter
+     * @return
+     * @Description:
+     */
     public String getFilter(String name, Integer siteId, Integer company,
         String filter) {
         if (StringUtils.isNotBlank(name)) {
@@ -62,10 +80,21 @@ public class LogRecharge extends Model<LogRecharge> {
 
     
     
-    
-    public Object getReCardPay(Integer siteId, Integer company, String name) {
+    /**
+     * 获取客户信息提供确认
+     * @param siteId
+     * @param company
+     * @param name
+     * @param code 
+     * @return
+     * @Description:
+     */
+    public Object getReCardPay(Integer siteId, Integer company, String name, String code) {
         String filter ="";
         filter = getFilter(name, siteId, company, filter);
+        if (StringUtils.isNotBlank(code)) {
+            filter += " and concat(b.dtu_code, '_', c.addr)  like '"+code+"' ";
+        }
         String sql ="select a.id site_id,a.name site_name, e.name, e.linked, e.mobile, concat(b.dtu_code, '_', c.addr) cardNum, g.card_gqzl,  g.card_syql, g.id data_id,f.id device_id ,e.id csr_id from sites a "
             +"  left join site_collect b on a.id = b.siteId "
             +"  left join site_device c on b.id = c.collectId "
@@ -80,7 +109,18 @@ public class LogRecharge extends Model<LogRecharge> {
 
 
 
-
+    /**
+     * 充值用气
+     * @param cardNum
+     * @param siteId
+     * @param deviceId
+     * @param dataId
+     * @param gasCount
+     * @param user
+     * @param csrId
+     * @throws Exception
+     * @Description:
+     */
     public void recharge(String cardNum, Integer siteId, Integer deviceId,Integer dataId,Integer gasCount, Integer user, Integer csrId) throws Exception {
         Record data = Db.findFirst("SELECT card_gqzl,card_yqzl FROM data_cards where id = ?",deviceId);
         String start_reading = data.getStr("card_gqzl");
@@ -124,7 +164,15 @@ public class LogRecharge extends Model<LogRecharge> {
 
 
 
-
+    /**
+     * 获取充值记录列表
+     * @param name
+     * @param siteId
+     * @param page
+     * @param limit
+     * @return
+     * @Description:
+     */
     public Page<Record> getLogPages(String name, Integer siteId, 
         Integer page, Integer limit) {
         String filter ="";
