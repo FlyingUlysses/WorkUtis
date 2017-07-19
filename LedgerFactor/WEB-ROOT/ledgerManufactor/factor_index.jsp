@@ -49,11 +49,13 @@
                     		<thead>
 			                      <tr onclick="getRowsss()">
 			                      	  <th style="width: 25px;"></th>
-			                      	  <th nowrap style="width: 20%;text-align: center;">生产厂家</th>
-			                          <th nowrap style="width: 20%;text-align: center;">设备型号</th>
-			                          <th nowrap style="width: 20%;text-align: center;">设备类型</th>
-			                          <th nowrap style="width: 20%;text-align: center;">创建日期</th>
+			                      	  <th nowrap style="width: 15%;text-align: center;">生产厂家</th>
+			                      	  <th nowrap style="width: 15%;text-align: center;">设备名称</th>
+			                          <th nowrap style="width: 15%;text-align: center;">设备型号</th>
+			                          <th nowrap style="width: 15%;text-align: center;">设备类型</th>
+			                          <th nowrap style="width: 15%;text-align: center;">创建日期</th>
 			                          <th nowrap style="text-align: center;">创建人</th>
+			                          <th style="width: 90px; vertical-align: middle;text-align: center;">操作</th>
 			                      </tr>
 			                 </thead>
 			                 <tbody id="recordBody1"></tbody>
@@ -63,7 +65,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="widget green">
+                <div class="widget green"  id="specs_div" hidden>
 					<div class="widget-title">
                         <h4><i class="icon-align-left"></i>设备属性</h4>
                          <div class="update-btn">

@@ -6,22 +6,16 @@
 </script>
 <style>
 <!--
-	.chzn-container{ width: 83% !important; }
-	.chzn-container-single .chzn-single { margin-top: -1px !important; }
-	#classify_chzn,#fault_chzn,#device_chzn,#company_chzn{ width: 83% !important;margin-right: 16px; }
-	#model_chzn, #zone_chzn{ width: 83% !important;}
+		.chzn-container{ width: 245px !important; }
+		.chzn-container-single .chzn-single { margin-top: -1px !important; }
 -->
 </style>
 <body>
 	<form id="editForm" action="#" class="form-horizontal">
 		<input type="hidden" name="equip.id" value="${equip.id}">
-		<div class="input-wrap">
-			<span>设备型号：</span>
-           <input type="text" name="equip.model" style="width: 341px;" class="txt" value="${equip.model}" required />
-	    </div>
-	   <div class="input-wrap">
-	    	 <span>选择厂家：</span>
-             <select id="manufactor" name="equip.manufactor"  data-placeholder="选择厂家" class="chzn-select" tabindex="-1" style="width: 80%;" required>
+		 <div class="input-wrap">
+	    	 <div class="tLable"><span style="width: 46%;">选择厂家：</span></div>
+             <select  name="equip.manufactor"  data-placeholder="选择厂家" class="chzn-select" tabindex="-1" required>
                  <c:forEach items="${manufactors}" var="item">
 					<c:choose>
                         <c:when test="${!empty equip.manufactor && equip.manufactor == item.id}">
@@ -34,9 +28,9 @@
                  </c:forEach>
              </select>
 	    </div>
-	   <div class="input-wrap">
-	    	 <span>设备类型：</span>
-             <select id="deviceType" name="equip.deviceType"  data-placeholder="选择设备类型" class="chzn-select" tabindex="-1" style="width: 80%;" required>
+	    <div class="input-wrap">
+	    	 <div class="tLable"><span style="width: 46%;">设备类型：</span></div>
+             <select  name="equip.deviceType"  data-placeholder="选择设备类型" class="chzn-select" tabindex="-1" required>
                  <c:forEach items="${typeList}" var="item">
 					<c:choose>
                         <c:when test="${!empty equip.deviceType && equip.deviceType == item.code}">
@@ -49,7 +43,14 @@
                  </c:forEach>
              </select>
 	    </div>
-		
+		<div class="input-wrap">
+	    	 <div class="tLable"><span style="width: 42%;">设备型号：</span></div>
+	    	 <input type="text" name="equip.model" class="txt" value="${equip.model}" style="width: 87%;" required="">
+	    </div>
+		<div class="input-wrap">
+	    	 <div class="tLable"><span style="width: 46%;">设备名称：</span></div>
+	    	 <input type="text"  name="equip.name" class="txt" value="${equip.name}"  class="txt" style="width: 87%;required="">
+	    </div>	    
 	    <div style="text-align: right; margin-top: 10px;">
 	    	<button id="ok" type="button" style="margin-right: 20px;" class="btn btn-success ladda-button" data-style="zoom-in">
 	    		<span class="ladda-label" style="font-size: 12px;">保存</span>
@@ -57,7 +58,7 @@
 	    </div>
 	</form>
     <script type="text/javascript">
-    	 $(".chzn-select").chosen();
+    		 $(".chzn-select").chosen();
     	 $(".chzn-select-deselect").chosen({
     	  		allow_single_deselect:true
     	 });
