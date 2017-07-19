@@ -49,10 +49,10 @@
                     		<thead>
 			                      <tr onclick="getRowsss()">
 			                      	  <th style="width: 25px;"></th>
-			                      	  <th nowrap style="width: 15%;text-align: center;">生产厂家</th>
-			                      	  <th nowrap style="width: 15%;text-align: center;">设备名称</th>
-			                          <th nowrap style="width: 15%;text-align: center;">设备型号</th>
-			                          <th nowrap style="width: 15%;text-align: center;">设备类型</th>
+			                      	  <th nowrap style="width: 15%;">生产厂家</th>
+			                      	  <th nowrap style="width: 15%;">设备名称</th>
+			                          <th nowrap style="width: 15%;">设备型号</th>
+			                          <th nowrap style="width: 15%;">设备类型</th>
 			                          <th nowrap style="width: 15%;text-align: center;">创建日期</th>
 			                          <th nowrap style="text-align: center;">创建人</th>
 			                          <th style="width: 90px; vertical-align: middle;text-align: center;">操作</th>
@@ -67,7 +67,7 @@
                 </div>
                 <div class="widget green"  id="specs_div" hidden>
 					<div class="widget-title">
-                        <h4><i class="icon-align-left"></i>设备属性</h4>
+                        <h4><i class="icon-align-left"></i>设备规格</h4>
                          <div class="update-btn">
                         <button id="createSpecs" type="button" style="margin-bottom: 10px;float=right;" class="btn btn-warning"><i class="icon-search"></i>&nbsp;<span style="font-size: 12px;">新增</span></button>
                          </div>
@@ -77,9 +77,10 @@
                     		<thead>
 			                      <tr>
 			                      	   <th style="width: 25px;"></th>
-			                      	  <th nowrap style="width: 30%;text-align: center;">所属设备</th>
-			                          <th nowrap style="width: 30%;text-align: center;">设备规格</th>
-			                          <th nowrap style="text-align: center;">规格值</th>
+			                      	  <th nowrap style="width: 25%;">设备名称</th>
+			                      	  <th nowrap style="width: 25%%;">设备型号</th>
+			                          <th nowrap style="width: 25%;">设备规格</th>
+			                          <th nowrap style="">规格值</th>
 			                          <th style="width: 90px; vertical-align: middle;text-align: center;">操作</th>
 			                      </tr>
 			                 </thead>

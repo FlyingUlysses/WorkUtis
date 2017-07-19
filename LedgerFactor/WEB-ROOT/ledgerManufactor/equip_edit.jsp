@@ -18,7 +18,7 @@
              <select  name="equip.manufactor"  data-placeholder="选择厂家" class="chzn-select" tabindex="-1" required>
                  <c:forEach items="${manufactors}" var="item">
 					<c:choose>
-                        <c:when test="${!empty equip.manufactor && equip.manufactor == item.id}">
+                        <c:when test="${!empty factor_id && factor_id == item.id}">
                  	        <option value="${item.id}" selected="selected" >${item.name}</option>
                   	 	</c:when>
                   	 	<c:otherwise>
@@ -62,6 +62,6 @@
     	 $(".chzn-select-deselect").chosen({
     	  		allow_single_deselect:true
     	 });
-    	 initFormValid("<%=basePath%>/ledgerManufactor/equipUpdate");
+    	 initFormValid("<%=basePath%>/ledgerManufactor/equipUpdate",parent.reloadRecord1);
     </script>
 </body>

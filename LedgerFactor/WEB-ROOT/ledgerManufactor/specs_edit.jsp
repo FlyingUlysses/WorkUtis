@@ -28,13 +28,17 @@
                  </c:forEach>
              </select>
 	    </div>
+	    	  <div class="input-wrap">
+		    <div class="tLable"><span style="width: 46%;">所属设备名称：</span></div>
+	            <input type="text"   class="txt" value="${equip.name}"  class="txt" style="width: 87%;required="" disabled="disabled">
+		    </div>
+	 </div>
 	   <div class="input-wrap">
-	    <div class="tLable"><span style="width: 46%;">所属设备：</span></div>
-            <input type="text"   class="txt" value="${equip.model}"  class="txt" style="width: 87%;required="" disabled="disabled">
-            <input type="hidden" id ="equip_id" name="specs.equip_id" class="txt" value="${equip.id}">
+		    <div class="tLable"><span style="width: 46%;">所属设备型号：</span></div>
+	            <input type="text"   class="txt" value="${equip.model}"  class="txt" style="width: 87%;required="" disabled="disabled">
+	            <input type="hidden" id ="equip_id" name="specs.equip_id" class="txt" value="${equip.id}">
+		    </div>
 	    </div>
-	    </div>
-	  
 		<div class="input-wrap">
 	    	 <div class="tLable"><span style="width: 42%;">规格数值：</span></div>
 	    	 <input type="text" name="specs.value" class="txt" value="${specs.value}" style="width: 87%;" required="">
