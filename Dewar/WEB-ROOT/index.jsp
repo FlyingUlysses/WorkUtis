@@ -48,10 +48,10 @@
 			                      <tr>
 			                      	  <th style="width: 12px; vertical-align: middle;"></th>
 			                          <th >生产厂家</th>
-			                          <th style="width: 15%;">设备型号</th>
-			                          <th style="width: 15%;">容器编码</th>
-			                          <th style="width: 15%;">传感器编码</th>
-			                          <th style="width: 15%;text-align: center;">创建时间</th>
+			                          <th style="width: 18%;">设备型号</th>
+			                          <th style="width: 18%;">容器编码</th>
+			                          <th style="width: 18%;">传感器编码</th>
+			                          <th style="width: 18%;text-align: center;">创建时间</th>
 			                          <th style="width: 80px; vertical-align: middle;text-align: center;">操作</th>
 			                      </tr>
 			                 </thead>
